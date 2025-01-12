@@ -27,12 +27,11 @@ const WelcomeScreen = () => {
         <h1 className="text-4xl font-bold text-white mb-4">{t("welcome.title")}</h1>
         <p className="text-xl text-white/90 mb-8">{t("welcome.subtitle")}</p>
 
-        <div className="relative w-48 h-48 mx-auto mb-8">
-          <div className="absolute inset-0 bg-white rounded-full opacity-20"></div>
+        <div className="relative w-64 h-64 mx-auto mb-8">
           <img
-            src="/placeholder.svg"
+            src="/lovable-uploads/e13a68a6-44e0-4a54-ad4d-8569479a7095.png"
             alt="Fils the Fox"
-            className="w-full h-full object-contain relative z-10"
+            className="w-full h-full object-contain animate-fade-in"
           />
         </div>
 
