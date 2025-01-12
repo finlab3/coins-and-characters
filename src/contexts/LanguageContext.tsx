@@ -35,6 +35,7 @@ const translations = {
     "lessons.firstCoins.description": "Explore the fascinating story of the first coins and how they changed trade forever.",
     "lessons.modernMoney.title": "Modern Money",
     "lessons.modernMoney.description": "Understanding different types of modern money and digital payments.",
+    "rewards.title": "My Rewards",
   },
   ar: {
     "welcome.title": "!FinKids مرحباً بك في",
@@ -62,6 +63,7 @@ const translations = {
     "lessons.firstCoins.description": "استكشف القصة المثيرة لأول العملات وكيف غيرت التجارة إلى الأبد.",
     "lessons.modernMoney.title": "المال الحديث",
     "lessons.modernMoney.description": "فهم الأنواع المختلفة من المال الحديث والمدفوعات الرقمية.",
+    "rewards.title": "مكافآتي",
   },
 };
 

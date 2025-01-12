@@ -7,6 +7,7 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import WelcomeScreen from "@/components/WelcomeScreen";
 import HomeScreen from "@/components/HomeScreen";
 import LessonsScreen from "@/components/LessonsScreen";
+import RewardsScreen from "@/components/RewardsScreen";
 import Navigation from "@/components/Navigation";
 
 const queryClient = new QueryClient();
@@ -22,7 +23,7 @@ const App = () => (
             <Route path="/" element={<WelcomeScreen />} />
             <Route path="/home" element={<HomeScreen />} />
             <Route path="/lessons" element={<LessonsScreen />} />
-            <Route path="/rewards" element={<div className="h-screen bg-gray-50 p-6 pb-24">Rewards (Coming Soon)</div>} />
+            <Route path="/rewards" element={<RewardsScreen />} />
             <Route path="/progress" element={<div className="h-screen bg-gray-50 p-6 pb-24">Progress (Coming Soon)</div>} />
             <Route path="/profile" element={<div className="h-screen bg-gray-50 p-6 pb-24">Profile (Coming Soon)</div>} />
             <Route path="*" element={<Navigate to="/" replace />} />
