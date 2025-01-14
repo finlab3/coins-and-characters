@@ -1,92 +1,62 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, ReactNode } from "react";
 
-type Language = "en" | "ar";
-
-interface LanguageContextType {
-  language: Language;
-  setLanguage: (lang: Language) => void;
-  t: (key: string) => string;
-}
+const LanguageContext = createContext();
 
 const translations = {
   en: {
     "welcome.title": "Welcome to FINLAB!",
     "welcome.subtitle": "Learn about money with Fils the Fox",
     "welcome.start": "Let's Learn!",
-    "nav.home": "Home",
-    "nav.lessons": "Lessons",
-    "nav.rewards": "Rewards",
-    "nav.progress": "Progress",
-    "nav.profile": "Profile",
-    "home.dailyGoal": "Daily Goal",
-    "home.coinsCollected": "coins collected today",
-    "home.learningPath": "Learning Path",
-    "home.topics.Savings": "Savings",
-    "home.topics.Earning Money": "Earning Money",
-    "home.topics.Spending Wisely": "Spending Wisely",
-    "home.topics.Budgeting": "Budgeting",
-    "lessons.moneyBasics": "Money Basics",
-    "lessons.startLesson": "Start Lesson",
-    "lessons.whatIsMoney.title": "What is Money?",
-    "lessons.whatIsMoney.description": "Learn about the basic concept of money and why we use it in our daily lives.",
-    "lessons.barterSystem.title": "The Barter System",
-    "lessons.barterSystem.description": "Discover how people traded goods before money was invented.",
-    "lessons.firstCoins.title": "First Coins in History",
-    "lessons.firstCoins.description": "Explore the fascinating story of the first coins and how they changed trade forever.",
-    "lessons.modernMoney.title": "Modern Money",
-    "lessons.modernMoney.description": "Understanding different types of modern money and digital payments.",
-    "rewards.title": "My Rewards",
+    "welcome.login": "Login",
+    "welcome.signup": "Sign Up",
+    "auth.login": "Login",
+    "auth.signup": "Sign Up",
+    "auth.name": "Name",
+    "auth.email": "Email",
+    "auth.password": "Password",
+    "auth.namePlaceholder": "Enter your name",
+    "auth.emailPlaceholder": "Enter your email",
+    "auth.passwordPlaceholder": "Enter your password",
+    "auth.loginButton": "Login",
+    "auth.signupButton": "Sign Up",
+    "auth.noAccount": "Don't have an account? Sign up",
+    "auth.hasAccount": "Already have an account? Login",
+    "auth.back": "Back",
   },
   ar: {
     "welcome.title": "!FINLAB مرحباً بك في",
     "welcome.subtitle": "تعلم عن المال مع الثعلب فلس",
     "welcome.start": "!هيا نتعلم",
-    "nav.home": "الرئيسية",
-    "nav.lessons": "الدروس",
-    "nav.rewards": "المكافآت",
-    "nav.progress": "التقدم",
-    "nav.profile": "الملف الشخصي",
-    "home.dailyGoal": "الهدف اليومي",
-    "home.coinsCollected": "العملات المجمعة اليوم",
-    "home.learningPath": "مسار التعلم",
-    "home.topics.Savings": "التوفير",
-    "home.topics.Earning Money": "كسب المال",
-    "home.topics.Spending Wisely": "الإنفاق بحكمة",
-    "home.topics.Budgeting": "الميزانية",
-    "lessons.moneyBasics": "أساسيات المال",
-    "lessons.startLesson": "ابدأ الدرس",
-    "lessons.whatIsMoney.title": "ما هو المال؟",
-    "lessons.whatIsMoney.description": "تعرف على المفهوم الأساسي للمال ولماذا نستخدمه في حياتنا اليومية.",
-    "lessons.barterSystem.title": "نظام المقايضة",
-    "lessons.barterSystem.description": "اكتشف كيف كان الناس يتبادلون السلع قبل اختراع المال.",
-    "lessons.firstCoins.title": "أول العملات في التاريخ",
-    "lessons.firstCoins.description": "استكشف القصة المثيرة لأول العملات وكيف غيرت التجارة إلى الأبد.",
-    "lessons.modernMoney.title": "المال الحديث",
-    "lessons.modernMoney.description": "فهم الأنواع المختلفة من المال الحديث والمدفوعات الرقمية.",
-    "rewards.title": "مكافآتي",
-  },
+    "welcome.login": "تسجيل الدخول",
+    "welcome.signup": "إنشاء حساب",
+    "auth.login": "تسجيل الدخول",
+    "auth.signup": "إنشاء حساب",
+    "auth.name": "الاسم",
+    "auth.email": "البريد الإلكتروني",
+    "auth.password": "كلمة المرور",
+    "auth.namePlaceholder": "أدخل اسمك",
+    "auth.emailPlaceholder": "أدخل بريدك الإلكتروني",
+    "auth.passwordPlaceholder": "أدخل كلمة المرور",
+    "auth.loginButton": "تسجيل الدخول",
+    "auth.signupButton": "إنشاء حساب",
+    "auth.noAccount": "ليس لديك حساب؟ سجل الآن",
+    "auth.hasAccount": "لديك حساب بالفعل؟ سجل دخول",
+    "auth.back": "رجوع",
+  }
 };
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+export const LanguageProvider = ({ children }) => {
+  const [language, setLanguage] = useState("en");
 
-export const LanguageProvider = ({ children }: { children: React.ReactNode }) => {
-  const [language, setLanguage] = useState<Language>("en");
-
-  const t = (key: string): string => {
-    return translations[language][key as keyof typeof translations.en] || key;
-  };
+  const t = (key) => translations[language][key] || key;
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ t, language, setLanguage }}>
       {children}
     </LanguageContext.Provider>
   );
 };
 
 export const useLanguage = () => {
-  const context = useContext(LanguageContext);
-  if (context === undefined) {
-    throw new Error("useLanguage must be used within a LanguageProvider");
-  }
-  return context;
+  return useContext(LanguageContext);
 };

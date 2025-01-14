@@ -27,12 +27,29 @@ const WelcomeScreen = () => {
         <h1 className="text-4xl font-bold text-white mb-4">{t("welcome.title")}</h1>
         <p className="text-xl text-white/90 mb-8">{t("welcome.subtitle")}</p>
 
-        <div className="relative w-64 h-64 mx-auto mb-8">
+        <div className="relative w-64 h-64 mx-auto mb-20">
           <img
             src="/lovable-uploads/e13a68a6-44e0-4a54-ad4d-8569479a7095.png"
             alt="Fils the Fox"
             className="w-full h-full object-contain animate-fade-in"
           />
+        </div>
+
+        <div className="flex gap-4 justify-center mb-24">
+          <Button
+            onClick={() => navigate("/login")}
+            variant="outline"
+            className="bg-white/10 hover:bg-white/20 text-white"
+          >
+            {t("welcome.login")}
+          </Button>
+          <Button
+            onClick={() => navigate("/signup")}
+            variant="outline"
+            className="bg-white/10 hover:bg-white/20 text-white"
+          >
+            {t("welcome.signup")}
+          </Button>
         </div>
 
         <Button

@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import WelcomeScreen from "@/components/WelcomeScreen";
+import AuthScreen from "@/components/AuthScreen";
 import HomeScreen from "@/components/HomeScreen";
 import LessonsScreen from "@/components/LessonsScreen";
 import RewardsScreen from "@/components/RewardsScreen";
@@ -21,6 +22,8 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<WelcomeScreen />} />
+            <Route path="/login" element={<AuthScreen />} />
+            <Route path="/signup" element={<AuthScreen />} />
             <Route path="/home" element={<HomeScreen />} />
             <Route path="/lessons" element={<LessonsScreen />} />
             <Route path="/rewards" element={<RewardsScreen />} />
