@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Coins, BookOpen, History, Calendar, ArrowRight, Lock } from "lucide-react";
 import { useState } from "react";
+import WhatIsMoneyLesson from "./lessons/WhatIsMoneyLesson";
 
 interface LessonNode {
   id: number;
@@ -16,6 +17,7 @@ interface LessonNode {
 const LessonsScreen = () => {
   const { t, language } = useLanguage();
   const [activeNode, setActiveNode] = useState<number>(1);
+  const [showLesson, setShowLesson] = useState(false);
 
   const lessonNodes: LessonNode[] = [
     {
@@ -47,6 +49,10 @@ const LessonsScreen = () => {
       unlocked: false,
     },
   ];
+
+  if (showLesson) {
+    return <WhatIsMoneyLesson />;
+  }
 
   return (
     <div className={`min-h-screen bg-gray-50 pb-20 ${language === "ar" ? "rtl" : "ltr"}`}>
@@ -82,10 +88,13 @@ const LessonsScreen = () => {
                         {node.unlocked && (
                           <Button 
                             className="mt-4"
-                            onClick={() => setActiveNode(node.id)}
+                            onClick={() => {
+                              setActiveNode(node.id);
+                              setShowLesson(true);
+                            }}
                           >
                             {t("lessons.startLesson")}
-                            <ArrowRight className="w-4 h-4" />
+                            <ArrowRight className="w-4 h-4 ml-2" />
                           </Button>
                         )}
                       </div>
