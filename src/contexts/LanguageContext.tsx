@@ -10,7 +10,7 @@ interface LanguageContextType {
 
 const translations = {
   en: {
-    "welcome.title": "Welcome to FinKids!",
+    "welcome.title": "Welcome to FINLAB!",
     "welcome.subtitle": "Learn about money with Fils the Fox",
     "welcome.start": "Let's Learn!",
     "nav.home": "Home",
@@ -38,7 +38,7 @@ const translations = {
     "rewards.title": "My Rewards",
   },
   ar: {
-    "welcome.title": "!FinKids مرحباً بك في",
+    "welcome.title": "!FINLAB مرحباً بك في",
     "welcome.subtitle": "تعلم عن المال مع الثعلب فلس",
     "welcome.start": "!هيا نتعلم",
     "nav.home": "الرئيسية",

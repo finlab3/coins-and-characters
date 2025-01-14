@@ -37,7 +37,7 @@ const WelcomeScreen = () => {
 
         <Button
           onClick={() => navigate("/home")}
-          className="bg-accent hover:bg-accent/90 text-white px-8 py-6 rounded-full text-xl font-semibold transition-all hover:scale-105 flex items-center gap-2"
+          className="fixed bottom-8 left-1/2 -translate-x-1/2 bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 rounded-full text-xl font-semibold transition-all hover:scale-105 flex items-center gap-2"
         >
           <BookOpen className="w-6 h-6" />
           {t("welcome.start")}

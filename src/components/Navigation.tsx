@@ -6,6 +6,11 @@ const Navigation = () => {
   const { t, language } = useLanguage();
   const location = useLocation();
 
+  // Don't show navigation on welcome screen
+  if (location.pathname === '/') {
+    return null;
+  }
+
   const navItems = [
     { icon: Home, label: "nav.home", path: "/home" },
     { icon: BookOpen, label: "nav.lessons", path: "/lessons" },
