@@ -1,6 +1,20 @@
 import React, { createContext, useContext, useState, ReactNode } from "react";
 
-const LanguageContext = createContext();
+interface LanguageContextType {
+  t: (key: string) => string;
+  language: "en" | "ar";
+  setLanguage: (lang: "en" | "ar") => void;
+}
+
+const LanguageContext = createContext<LanguageContextType>({
+  t: (key: string) => key,
+  language: "en",
+  setLanguage: () => {},
+});
+
+interface LanguageProviderProps {
+  children: ReactNode;
+}
 
 const translations = {
   en: {
@@ -22,6 +36,29 @@ const translations = {
     "auth.noAccount": "Don't have an account? Sign up",
     "auth.hasAccount": "Already have an account? Login",
     "auth.back": "Back",
+    "nav.home": "Home",
+    "nav.lessons": "Lessons",
+    "nav.rewards": "Rewards",
+    "nav.progress": "Progress",
+    "nav.profile": "Profile",
+    "home.dailyGoal": "Daily Goal",
+    "home.coinsCollected": "coins collected",
+    "home.learningPath": "Learning Path",
+    "home.topics.Savings": "Savings",
+    "home.topics.Earning Money": "Earning Money",
+    "home.topics.Spending Wisely": "Spending Wisely",
+    "home.topics.Budgeting": "Budgeting",
+    "lessons.moneyBasics": "Money Basics",
+    "lessons.startLesson": "Start Lesson",
+    "lessons.whatIsMoney.title": "What is Money?",
+    "lessons.whatIsMoney.description": "Learn the basics of money and its importance",
+    "lessons.barterSystem.title": "The Barter System",
+    "lessons.barterSystem.description": "Discover how trade worked before money",
+    "lessons.firstCoins.title": "First Coins",
+    "lessons.firstCoins.description": "Explore the history of the first coins",
+    "lessons.modernMoney.title": "Modern Money",
+    "lessons.modernMoney.description": "Understanding today's monetary system",
+    "rewards.title": "Rewards"
   },
   ar: {
     "welcome.title": "!FINLAB مرحباً بك في",
@@ -42,13 +79,36 @@ const translations = {
     "auth.noAccount": "ليس لديك حساب؟ سجل الآن",
     "auth.hasAccount": "لديك حساب بالفعل؟ سجل دخول",
     "auth.back": "رجوع",
+    "nav.home": "الرئيسية",
+    "nav.lessons": "الدروس",
+    "nav.rewards": "المكافآت",
+    "nav.progress": "التقدم",
+    "nav.profile": "الملف الشخصي",
+    "home.dailyGoal": "الهدف اليومي",
+    "home.coinsCollected": "العملات المجمعة",
+    "home.learningPath": "مسار التعلم",
+    "home.topics.Savings": "التوفير",
+    "home.topics.Earning Money": "كسب المال",
+    "home.topics.Spending Wisely": "الإنفاق بحكمة",
+    "home.topics.Budgeting": "الميزانية",
+    "lessons.moneyBasics": "أساسيات المال",
+    "lessons.startLesson": "ابدأ الدرس",
+    "lessons.whatIsMoney.title": "ما هو المال؟",
+    "lessons.whatIsMoney.description": "تعلم أساسيات المال وأهميته",
+    "lessons.barterSystem.title": "نظام المقايضة",
+    "lessons.barterSystem.description": "اكتشف كيف كانت التجارة قبل المال",
+    "lessons.firstCoins.title": "العملات الأولى",
+    "lessons.firstCoins.description": "استكشف تاريخ العملات الأولى",
+    "lessons.modernMoney.title": "المال الحديث",
+    "lessons.modernMoney.description": "فهم النظام النقدي اليوم",
+    "rewards.title": "المكافآت"
   }
 };
 
-export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState("en");
+export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
+  const [language, setLanguage] = useState<"en" | "ar">("en");
 
-  const t = (key) => translations[language][key] || key;
+  const t = (key: string): string => translations[language][key] || key;
 
   return (
     <LanguageContext.Provider value={{ t, language, setLanguage }}>
@@ -58,5 +118,9 @@ export const LanguageProvider = ({ children }) => {
 };
 
 export const useLanguage = () => {
-  return useContext(LanguageContext);
+  const context = useContext(LanguageContext);
+  if (context === undefined) {
+    throw new Error("useLanguage must be used within a LanguageProvider");
+  }
+  return context;
 };
