@@ -11,6 +11,7 @@ import HomeScreen from "@/components/HomeScreen";
 import LessonsScreen from "@/components/LessonsScreen";
 import RewardsScreen from "@/components/RewardsScreen";
 import ProgressScreen from "@/components/ProgressScreen";
+import ProfileScreen from "@/components/ProfileScreen";
 
 const queryClient = new QueryClient();
 
@@ -29,7 +30,7 @@ const App = () => (
             <Route path="/lessons" element={<LessonsScreen />} />
             <Route path="/rewards" element={<RewardsScreen />} />
             <Route path="/progress" element={<ProgressScreen />} />
-            <Route path="/profile" element={<div className="h-screen bg-gray-50 p-6 pb-24">Profile (Coming Soon)</div>} />
+            <Route path="/profile" element={<ProfileScreen />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
           <Navigation />
