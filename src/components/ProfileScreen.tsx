@@ -8,23 +8,23 @@ import { Wand2 } from "lucide-react";
 const avatarOptions = [
   {
     id: 1,
-    url: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1",
-    alt: "Cute kitten avatar",
+    url: "/lovable-uploads/e13a68a6-44e0-4a54-ad4d-8569479a7095.png",
+    alt: "Cute panda avatar",
   },
   {
     id: 2,
-    url: "https://images.unsplash.com/photo-1582562124811-c09040d0a901",
-    alt: "Orange cat avatar",
+    url: "https://api.dicebear.com/7.x/adventurer/svg?seed=Felix",
+    alt: "Fox avatar",
   },
   {
     id: 3,
-    url: "https://images.unsplash.com/photo-1485833077593-4278bba3f11f",
-    alt: "Brown deer avatar",
+    url: "https://api.dicebear.com/7.x/adventurer/svg?seed=Midnight",
+    alt: "Bear avatar",
   },
   {
     id: 4,
-    url: "https://images.unsplash.com/photo-1438565434616-3ef039228b15",
-    alt: "Mountain goat avatar",
+    url: "https://api.dicebear.com/7.x/adventurer/svg?seed=Luna",
+    alt: "Bunny avatar",
   }
 ];
 
