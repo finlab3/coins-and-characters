@@ -2,9 +2,10 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Coins, BookOpen, History, Calendar, ArrowRight, Lock } from "lucide-react";
+import { Coins, BookOpen, History, Calendar, ArrowRight, Lock, Heart } from "lucide-react";
 import { useState } from "react";
 import WhatIsMoneyLesson from "./lessons/WhatIsMoneyLesson";
+import WantsAndNeedsLesson from "./lessons/WantsAndNeedsLesson";
 
 interface LessonNode {
   id: number;
@@ -12,6 +13,7 @@ interface LessonNode {
   description: string;
   icon: typeof Coins;
   unlocked: boolean;
+  component: React.ComponentType;
 }
 
 const LessonsScreen = () => {
@@ -26,32 +28,45 @@ const LessonsScreen = () => {
       description: t("lessons.whatIsMoney.description"),
       icon: Coins,
       unlocked: true,
+      component: WhatIsMoneyLesson,
     },
     {
       id: 2,
-      title: t("lessons.barterSystem.title"),
-      description: t("lessons.barterSystem.description"),
-      icon: BookOpen,
+      title: "Wants and Needs",
+      description: "Learn the difference between things we want and things we need",
+      icon: Heart,
       unlocked: true,
+      component: WantsAndNeedsLesson,
     },
     {
       id: 3,
+      title: t("lessons.barterSystem.title"),
+      description: t("lessons.barterSystem.description"),
+      icon: BookOpen,
+      unlocked: false,
+      component: WhatIsMoneyLesson,
+    },
+    {
+      id: 4,
       title: t("lessons.firstCoins.title"),
       description: t("lessons.firstCoins.description"),
       icon: History,
       unlocked: false,
+      component: WhatIsMoneyLesson,
     },
     {
-      id: 4,
+      id: 5,
       title: t("lessons.modernMoney.title"),
       description: t("lessons.modernMoney.description"),
       icon: Calendar,
       unlocked: false,
+      component: WhatIsMoneyLesson,
     },
   ];
 
   if (showLesson) {
-    return <WhatIsMoneyLesson />;
+    const ActiveLesson = lessonNodes.find(node => node.id === activeNode)?.component;
+    return ActiveLesson ? <ActiveLesson /> : null;
   }
 
   return (
