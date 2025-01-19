@@ -19,6 +19,7 @@ const Quiz = ({ onBack }: QuizProps) => {
   const { t } = useLanguage();
   const [score, setScore] = useState(0);
   const [currentItem, setCurrentItem] = useState(0);
+  const [isCompleted, setIsCompleted] = useState(false);
 
   const quizItems: QuizItem[] = [
     {
@@ -96,6 +97,7 @@ const Quiz = ({ onBack }: QuizProps) => {
     if (currentItem < quizItems.length - 1) {
       setCurrentItem(currentItem + 1);
     } else {
+      setIsCompleted(true);
       toast.success(
         t("lessons.wantsAndNeeds.quiz.completed") + 
         ` ${score + (isCorrect ? 1 : 0)} / ${quizItems.length}`
@@ -108,12 +110,23 @@ const Quiz = ({ onBack }: QuizProps) => {
       <h2 className="text-2xl font-bold">{t("lessons.wantsAndNeeds.quiz.title")}</h2>
       <p className="text-gray-600">{t("lessons.wantsAndNeeds.quiz.instruction")}</p>
       
-      {currentItem < quizItems.length && (
+      {!isCompleted && currentItem < quizItems.length && (
         <QuizItem
           name={quizItems[currentItem].name}
           image={quizItems[currentItem].image}
           onAnswerSubmit={handleAnswer}
         />
+      )}
+
+      {isCompleted && (
+        <div className="text-center space-y-4">
+          <h3 className="text-xl font-semibold">
+            {t("lessons.wantsAndNeeds.quiz.completed")}
+          </h3>
+          <p className="text-lg">
+            {t("home.coinsCollected")}: {score}/{quizItems.length}
+          </p>
+        </div>
       )}
 
       <div className="flex justify-between mt-6">
@@ -123,6 +136,7 @@ const Quiz = ({ onBack }: QuizProps) => {
             onBack();
             setCurrentItem(0);
             setScore(0);
+            setIsCompleted(false);
           }}
         >
           {t("auth.back")}
