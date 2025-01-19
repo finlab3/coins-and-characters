@@ -101,7 +101,31 @@ const translations = {
     "lessons.firstCoins.description": "استكشف تاريخ العملات الأولى",
     "lessons.modernMoney.title": "المال الحديث",
     "lessons.modernMoney.description": "فهم النظام النقدي اليوم",
-    "rewards.title": "المكافآت"
+    "rewards.title": "المكافآت",
+    // New translations for Wants and Needs lesson
+    "lessons.wantsAndNeeds.title": "الرغبات والاحتياجات",
+    "lessons.wantsAndNeeds.description": "تعلم الفرق بين ما نريد وما نحتاج",
+    "lessons.wantsAndNeeds.needs": "الاحتياجات",
+    "lessons.wantsAndNeeds.wants": "الرغبات",
+    "lessons.wantsAndNeeds.needsDescription": "الاحتياجات هي الأشياء الضرورية للبقاء والحياة الصحية:",
+    "lessons.wantsAndNeeds.wantsDescription": "الرغبات هي الأشياء التي تجعل الحياة أكثر متعة ولكنها ليست ضرورية للبقاء:",
+    "lessons.wantsAndNeeds.quiz.title": "اختبار: هل هو رغبة أم حاجة؟",
+    "lessons.wantsAndNeeds.quiz.instruction": "!صنف كل عنصر في الفئة الصحيحة",
+    "lessons.wantsAndNeeds.quiz.need": "حاجة",
+    "lessons.wantsAndNeeds.quiz.want": "رغبة",
+    "lessons.wantsAndNeeds.quiz.correct": "!إجابة صحيحة",
+    "lessons.wantsAndNeeds.quiz.incorrect": "!حاول مرة أخرى",
+    "lessons.wantsAndNeeds.quiz.completed": "!اكتمل الاختبار",
+    "lessons.wantsAndNeeds.items.water": "ماء",
+    "lessons.wantsAndNeeds.items.videoGame": "جهاز ألعاب فيديو",
+    "lessons.wantsAndNeeds.items.food": "طعام",
+    "lessons.wantsAndNeeds.items.toys": "ألعاب",
+    "lessons.wantsAndNeeds.items.home": "منزل",
+    "lessons.wantsAndNeeds.items.candy": "حلوى",
+    "lessons.wantsAndNeeds.items.clothes": "ملابس",
+    "lessons.wantsAndNeeds.items.bicycle": "دراجة",
+    "lessons.wantsAndNeeds.items.medicine": "دواء",
+    "lessons.wantsAndNeeds.items.smartphone": "هاتف ذكي"
   }
 };
 

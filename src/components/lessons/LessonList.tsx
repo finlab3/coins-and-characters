@@ -34,8 +34,8 @@ const LessonList = ({ activeNode, onNodeSelect, onStartLesson }: LessonListProps
     },
     {
       id: 2,
-      title: "Wants and Needs",
-      description: "Learn the difference between things we want and things we need",
+      title: t("lessons.wantsAndNeeds.title"),
+      description: t("lessons.wantsAndNeeds.description"),
       icon: Heart,
       unlocked: true,
       component: WantsAndNeedsLesson,
