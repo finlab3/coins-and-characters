@@ -3,6 +3,7 @@ import { useState } from "react";
 import LessonList from "./lessons/LessonList";
 import WhatIsMoneyLesson from "./lessons/WhatIsMoneyLesson";
 import WantsAndNeedsLesson from "./lessons/WantsAndNeedsLesson";
+import SadaqaLesson from "./lessons/SadaqaLesson";
 
 const LessonsScreen = () => {
   const { t, language } = useLanguage();
@@ -15,6 +16,8 @@ const LessonsScreen = () => {
         return <WhatIsMoneyLesson />;
       case 2:
         return <WantsAndNeedsLesson />;
+      case 3:
+        return <SadaqaLesson />;
       default:
         return null;
     }

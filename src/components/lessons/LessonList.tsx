@@ -1,9 +1,10 @@
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Coins, BookOpen, History, Calendar, Heart } from "lucide-react";
+import { Coins, BookOpen, History, Calendar, Heart, HandHeart } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LessonNode from "./LessonNode";
 import WhatIsMoneyLesson from "./WhatIsMoneyLesson";
 import WantsAndNeedsLesson from "./WantsAndNeedsLesson";
+import SadaqaLesson from "./SadaqaLesson";
 
 interface LessonData {
   id: number;
@@ -42,6 +43,14 @@ const LessonList = ({ activeNode, onNodeSelect, onStartLesson }: LessonListProps
     },
     {
       id: 3,
+      title: t("lessons.sadaqa.title"),
+      description: t("lessons.sadaqa.description"),
+      icon: HandHeart,
+      unlocked: true,
+      component: SadaqaLesson,
+    },
+    {
+      id: 4,
       title: t("lessons.barterSystem.title"),
       description: t("lessons.barterSystem.description"),
       icon: BookOpen,
@@ -49,7 +58,7 @@ const LessonList = ({ activeNode, onNodeSelect, onStartLesson }: LessonListProps
       component: WhatIsMoneyLesson,
     },
     {
-      id: 4,
+      id: 5,
       title: t("lessons.firstCoins.title"),
       description: t("lessons.firstCoins.description"),
       icon: History,
@@ -57,7 +66,7 @@ const LessonList = ({ activeNode, onNodeSelect, onStartLesson }: LessonListProps
       component: WhatIsMoneyLesson,
     },
     {
-      id: 5,
+      id: 6,
       title: t("lessons.modernMoney.title"),
       description: t("lessons.modernMoney.description"),
       icon: Calendar,
