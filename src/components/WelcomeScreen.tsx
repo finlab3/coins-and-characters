@@ -1,5 +1,5 @@
-import { useLanguage } from "@/contexts/LanguageContext";
-import { Button } from "@/components/ui/button";
+import { useLanguage } from "../contexts/LanguageContext";
+import { Button } from "../components/ui/button";
 import { Infinity, BookOpen } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
@@ -42,13 +42,6 @@ const WelcomeScreen = () => {
             className="bg-white/10 hover:bg-white/20 text-white"
           >
             {t("welcome.login")}
-          </Button>
-          <Button
-            onClick={() => navigate("/signup")}
-            variant="outline"
-            className="bg-white/10 hover:bg-white/20 text-white"
-          >
-            {t("welcome.signup")}
           </Button>
         </div>
 

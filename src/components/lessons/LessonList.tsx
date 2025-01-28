@@ -28,15 +28,15 @@ const LessonList = ({ activeNode, onNodeSelect, onStartLesson }: LessonListProps
     {
       id: 1,
       title: t("lessons.whatIsMoney.title"),
-      description: t("lessons.whatIsMoney.description"),
+      description: t("What Is Money explores the nature, history, and role of money, uncovering how it shapes society and the global economy."),
       icon: Coins,
       unlocked: true,
       component: WhatIsMoneyLesson,
     },
     {
       id: 2,
-      title: t("lessons.wantsAndNeeds.title"),
-      description: t("lessons.wantsAndNeeds.description"),
+      title: t("Lessons Wants And Needs"),
+      description: t("The Wants and Needs lesson helps students differentiate essential needs from non-essential wants. Through examples and discussions, they’ll learn to prioritize needs, budget effectively, and make responsible financial decisions."),
       icon: Heart,
       unlocked: true,
       component: WantsAndNeedsLesson,

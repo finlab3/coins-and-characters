@@ -1,11 +1,13 @@
-import { useLanguage } from "@/contexts/LanguageContext";
-import { Progress } from "@/components/ui/progress";
+import { useLanguage } from "../contexts/LanguageContext"; // Updated import path
+import { Progress } from "../components/ui/progress"; // Updated import path
 import { Infinity, User, Lock } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const HomeScreen = () => {
   const { t, language } = useLanguage();
   const [progress] = useState(65); // Example progress value
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const learningTopics = [
     { id: 1, title: "Savings", unlocked: true },
@@ -19,7 +21,7 @@ const HomeScreen = () => {
       {/* Top Navigation Bar */}
       <nav className="bg-white shadow-sm p-4 flex justify-between items-center">
         <Infinity className="w-8 h-8 text-primary" />
-        <User className="w-8 h-8 text-gray-600" />
+        <User className="w-8 h-8 text-gray-600" onClick={() => navigate('/auth')} /> {/* Add onClick for navigation */}
       </nav>
 
       {/* Daily Goal Tracker */}
