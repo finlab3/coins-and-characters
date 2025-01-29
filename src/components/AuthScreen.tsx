@@ -83,7 +83,7 @@ const AuthScreen = () => {
             {!isLogin && (
               <>
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">Age</label>
+                  <label className="text-sm font-medium">{t("auth.age")}</label>
                   <select
                     value={age}
                     onChange={(e) => setAge(Number(e.target.value))}
@@ -97,7 +97,7 @@ const AuthScreen = () => {
                   </select>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">School</label>
+                  <label className="text-sm font-medium">{t("auth.school")}</label>
                   <Input
                     type="text"
                     value={school}
