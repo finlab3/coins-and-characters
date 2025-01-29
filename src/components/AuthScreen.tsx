@@ -29,7 +29,7 @@ const AuthScreen = () => {
   };
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br from-primary to-secondary p-6 ${language === "ar" ? "rtl" : "ltr"}`}>
+    <div className={`min-h-screen bg-gradient-to-br from-primary to-secondary p-6 flex items-center justify-center ${language === "ar" ? "rtl" : "ltr"}`}>
       <Button
         variant="ghost"
         onClick={() => navigate("/")}

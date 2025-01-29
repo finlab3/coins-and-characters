@@ -1,4 +1,4 @@
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage } from "../contexts/LanguageContext";
 import { Home, BookOpen, Trophy, BarChart2, User } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -6,8 +6,8 @@ const Navigation = () => {
   const { t, language } = useLanguage();
   const location = useLocation();
 
-  // Don't show navigation on welcome screen
-  if (location.pathname === '/') {
+  // Don't show navigation on welcome screen or auth screens
+  if (location.pathname === '/' || location.pathname === '/login' || location.pathname === '/signup') {
     return null;
   }
 
