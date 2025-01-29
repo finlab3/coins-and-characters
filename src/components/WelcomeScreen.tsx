@@ -29,7 +29,7 @@ const WelcomeScreen = () => {
 
         <div className="relative w-64 h-64 mx-auto mb-20">
           <img
-            src="/lovable-uploads/e13a68a6-44e0-4a54-ad4d-8569479a7095.png"
+            src="Assets/Finlab-Fox.png"
             alt="Fils the Fox"
             className="w-full h-full object-contain animate-fade-in"
           />
