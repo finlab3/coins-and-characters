@@ -8,7 +8,7 @@ import { Wand2 } from "lucide-react";
 const avatarOptions = [
   {
     id: 1,
-    url: "/lovable-uploads/e13a68a6-44e0-4a54-ad4d-8569479a7095.png",
+    url: "Assets/Finlab-Fox.png",
     alt: "Cute panda avatar",
   },
   {
