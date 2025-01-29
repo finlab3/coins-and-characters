@@ -21,7 +21,7 @@ const translations = {
     "welcome.title": "Welcome to FINLAB!",
     "welcome.subtitle": "Learn about money with Fils the Fox",
     "welcome.start": "Let's Learn!",
-    "welcome.login": "Login and Create Account",
+    "welcome.login": "Login / Create Account",
     "auth.login": "Login",
     "auth.signup": "Sign Up",
     "auth.name": "Name",
