@@ -33,13 +33,13 @@ const AuthScreen = () => {
       <Button
         variant="ghost"
         onClick={() => navigate("/")}
-        className="text-white hover:text-white/80 mb-6"
+        className="text-white hover:text-white/80 mb-6 absolute top-6 left-6"
       >
         <ArrowLeft className="w-4 h-4 mr-2" />
         {t("auth.back")}
       </Button>
 
-      <Card className="max-w-md mx-auto">
+      <Card className="max-w-2xl mx-auto"> {/* Increased width here */}
         <CardHeader>
           <h1 className="text-2xl font-bold text-center">
             {isLogin ? t("auth.login") : "Sign Up"} {/* Change title here */}

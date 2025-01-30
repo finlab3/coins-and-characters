@@ -5,6 +5,7 @@ import { Button } from "../components/ui/button";
 import { Card } from "../components/ui/card";
 import { useToast } from "../components/ui/use-toast";
 import { Wand2 } from "lucide-react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const avatarOptions = [
   {
@@ -32,6 +33,7 @@ const avatarOptions = [
 const ProfileScreen = () => {
   const [selectedAvatar, setSelectedAvatar] = useState(avatarOptions[0]);
   const { toast } = useToast();
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const handleAvatarChange = (avatar: typeof avatarOptions[0]) => {
     setSelectedAvatar(avatar);
@@ -98,6 +100,16 @@ const ProfileScreen = () => {
             ))}
           </div>
         </Card>
+
+        {/* Logout Button */}
+        <div className="flex justify-center">
+          <Button
+            onClick={() => navigate("/")}
+            className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full text-xl font-semibold transition-all"
+          >
+            Logout
+          </Button>
+        </div>
       </div>
     </div>
   );
