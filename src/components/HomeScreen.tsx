@@ -6,7 +6,6 @@ import {
   Coins, 
   History,
   Briefcase,
-  PiggyBank,
   CreditCard,
   TrendingUp,
   Heart,
@@ -21,13 +20,13 @@ const HomeScreen = () => {
   const navigate = useNavigate();
 
   const financePillars = [
-    { id: 1, title: "Money History", icon: History, unlocked: true },
-    { id: 2, title: "Earn", icon: Briefcase, unlocked: true },
-    { id: 3, title: "Save", icon: PiggyBank, unlocked: true },
-    { id: 4, title: "Spend", icon: CreditCard, unlocked: false },
-    { id: 5, title: "Invest", icon: TrendingUp, unlocked: false },
-    { id: 6, title: "Give", icon: Heart, unlocked: false },
-    { id: 7, title: "Money Math", icon: Calculator, unlocked: false },
+    { id: 1, title: "Money History", icon: History, unlocked: true, color: "#8B5CF6" },
+    { id: 2, title: "Earn", icon: Briefcase, unlocked: true, color: "#F97316" },
+    { id: 3, title: "Save", icon: Coins, unlocked: true, color: "#0EA5E9" },
+    { id: 4, title: "Spend", icon: CreditCard, unlocked: false, color: "#D946EF" },
+    { id: 5, title: "Invest", icon: TrendingUp, unlocked: false, color: "#22C55E" },
+    { id: 6, title: "Give", icon: Heart, unlocked: false, color: "#EF4444" },
+    { id: 7, title: "Money Math", icon: Calculator, unlocked: false, color: "#6366F1" },
   ];
 
   const handlePillarClick = (id: number) => {
@@ -67,7 +66,10 @@ const HomeScreen = () => {
                   !pillar.unlocked && "opacity-75"
                 }`}
               >
-                <pillar.icon className={`w-8 h-8 ${pillar.unlocked ? 'text-primary' : 'text-gray-400'}`} />
+                <pillar.icon 
+                  className={`w-8 h-8`} 
+                  style={{ color: pillar.unlocked ? pillar.color : '#9CA3AF' }}
+                />
                 <span className="font-medium text-center">{t(`home.pillars.${pillar.title}`)}</span>
               </div>
             ))}
