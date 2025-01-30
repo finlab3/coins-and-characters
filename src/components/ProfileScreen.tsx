@@ -105,7 +105,7 @@ const ProfileScreen = () => {
         <div className="flex justify-center">
           <Button
             onClick={() => navigate("/")}
-            className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full text-xl font-semibold transition-all"
+            className="bg-[#F2FCE2] hover:bg-[#D1E7DD] text-white px-8 py-4 rounded-full text-xl font-semibold transition-all"
           >
             Logout
           </Button>
