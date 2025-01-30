@@ -39,7 +39,7 @@ const AuthScreen = () => {
         {t("auth.back")}
       </Button>
 
-      <Card className="max-w-2xl mx-auto"> {/* Increased width here */}
+      <Card className="max-w-lg mx-auto"> {/* Increased width here */}
         <CardHeader>
           <h1 className="text-2xl font-bold text-center">
             {isLogin ? t("auth.login") : "Sign Up"} {/* Change title here */}
