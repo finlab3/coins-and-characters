@@ -63,13 +63,13 @@ const HomeScreen = () => {
                 key={pillar.id}
                 onClick={() => handlePillarClick(pillar.id)}
                 style={{ backgroundColor: pillar.bgColor }}
-                className={`rounded-lg shadow-md p-6 flex flex-col items-center justify-center gap-3 cursor-pointer transform transition-transform hover:scale-105`}
+                className={`rounded-full aspect-square shadow-md p-6 flex flex-col items-center justify-center gap-3 cursor-pointer transform transition-transform hover:scale-105`}
               >
                 <pillar.icon 
                   className={`w-8 h-8`} 
                   style={{ color: pillar.color }}
                 />
-                <span className="font-medium text-center">{t(`home.pillars.${pillar.title}`)}</span>
+                <span className="font-medium text-center text-sm">{t(`home.pillars.${pillar.title}`)}</span>
               </div>
             ))}
           </div>
