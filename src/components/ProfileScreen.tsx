@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { useToast } from "@/components/ui/use-toast";
+import { useLanguage } from "../contexts/LanguageContext"; // Add this import
+import { Avatar, AvatarImage, AvatarFallback } from "../components/ui/avatar";
+import { Button } from "../components/ui/button";
+import { Card } from "../components/ui/card";
+import { useToast } from "../components/ui/use-toast";
 import { Wand2 } from "lucide-react";
 
 const avatarOptions = [
@@ -41,6 +42,12 @@ const ProfileScreen = () => {
     });
   };
 
+  const { language, setLanguage } = useLanguage(); // Use the context
+
+  const toggleLanguage = () => {
+    setLanguage(language === "en" ? "ar" : "en");
+  };
+
   return (
     <div className="min-h-screen bg-[#F2FCE2] p-6 pb-24">
       <div className="max-w-2xl mx-auto space-y-8">
@@ -51,6 +58,10 @@ const ProfileScreen = () => {
             <Wand2 className="w-8 h-8 text-primary animate-bounce-slow" />
           </h1>
           <p className="text-lg text-[#4B5563]">Choose your favorite friend!</p>
+          {/* Change Language Button */}
+          <Button onClick={toggleLanguage} className="mt-4">
+            Change Language to {language === "en" ? "Arabic" : "English"}
+          </Button>
         </div>
 
         {/* Current Avatar Display */}

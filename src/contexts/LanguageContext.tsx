@@ -88,7 +88,12 @@ const translations = {
     "lessons.sadaqa.quiz.q3a2": "Both the giver and receiver",
     "lessons.sadaqa.quiz.correct": "Correct! Well done! 🎉",
     "lessons.sadaqa.quiz.incorrect": "That's not quite right. Try again!",
-    "lessons.sadaqa.quiz.completed": "Quiz Completed!"
+    "lessons.sadaqa.quiz.completed": "Quiz Completed!",
+    // New translations for additional screens
+    "welcome.screen": "Welcome Screen",
+    "auth.screen": "Authentication Screen",
+    "profile.screen": "Profile Screen",
+    // Add more translations as needed
   },
   ar: {
     "welcome.title": "!FINLAB مرحباً بك في",
