@@ -20,13 +20,13 @@ const HomeScreen = () => {
   const navigate = useNavigate();
 
   const financePillars = [
-    { id: 1, title: "Money History", icon: History, unlocked: true, color: "#8B5CF6" },
-    { id: 2, title: "Earn", icon: Briefcase, unlocked: true, color: "#F97316" },
-    { id: 3, title: "Save", icon: Coins, unlocked: true, color: "#0EA5E9" },
-    { id: 4, title: "Spend", icon: CreditCard, unlocked: false, color: "#D946EF" },
-    { id: 5, title: "Invest", icon: TrendingUp, unlocked: false, color: "#22C55E" },
-    { id: 6, title: "Give", icon: Heart, unlocked: false, color: "#EF4444" },
-    { id: 7, title: "Money Math", icon: Calculator, unlocked: false, color: "#6366F1" },
+    { id: 1, title: "Money History", icon: History, unlocked: true, color: "#8B5CF6", bgColor: "#F1F0FB" },
+    { id: 2, title: "Earn", icon: Briefcase, unlocked: true, color: "#F97316", bgColor: "#FDE1D3" },
+    { id: 3, title: "Save", icon: Coins, unlocked: true, color: "#0EA5E9", bgColor: "#D3E4FD" },
+    { id: 4, title: "Spend", icon: CreditCard, unlocked: false, color: "#D946EF", bgColor: "#FFDEE2" },
+    { id: 5, title: "Invest", icon: TrendingUp, unlocked: false, color: "#22C55E", bgColor: "#F2FCE2" },
+    { id: 6, title: "Give", icon: Heart, unlocked: false, color: "#EF4444", bgColor: "#FEC6A1" },
+    { id: 7, title: "Money Math", icon: Calculator, unlocked: false, color: "#6366F1", bgColor: "#E5DEFF" },
   ];
 
   const handlePillarClick = (id: number) => {
@@ -62,7 +62,8 @@ const HomeScreen = () => {
               <div
                 key={pillar.id}
                 onClick={() => handlePillarClick(pillar.id)}
-                className={`bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center gap-3 cursor-pointer transform transition-transform hover:scale-105 ${
+                style={{ backgroundColor: pillar.bgColor }}
+                className={`rounded-lg shadow-md p-6 flex flex-col items-center justify-center gap-3 cursor-pointer transform transition-transform hover:scale-105 ${
                   !pillar.unlocked && "opacity-75"
                 }`}
               >
