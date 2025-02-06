@@ -93,11 +93,11 @@ const translations = {
     "lessons.sadaqa.quiz.correct": "Correct! Well done! 🎉",
     "lessons.sadaqa.quiz.incorrect": "That's not quite right. Try again!",
     "lessons.sadaqa.quiz.completed": "Quiz Completed!",
-    // New translations for additional screens
     "welcome.screen": "Welcome Screen",
     "auth.screen": "Authentication Screen",
     "profile.screen": "Profile Screen",
-    // Add more translations as needed
+    "button.logout": "Logout",
+    
   },
   ar: {
     "welcome.title": "!FINLAB مرحباً بك في",
@@ -174,7 +174,8 @@ const translations = {
     "lessons.sadaqa.quiz.q3a2": "المعطي والمتلقي معاً",
     "lessons.sadaqa.quiz.correct": "!صحيح! أحسنت 🎉",
     "lessons.sadaqa.quiz.incorrect": "!هذا غير صحيح. حاول مرة أخرى",
-    "lessons.sadaqa.quiz.completed": "!اكتمل الاختبار"
+    "lessons.sadaqa.quiz.completed": "!اكتمل الاختبار",
+    "button.logout": "تسجيل الخروج", // Added missing comma here
   }
 };
 
