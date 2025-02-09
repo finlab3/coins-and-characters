@@ -1,8 +1,9 @@
+
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Coins, ArrowRight, Check } from "lucide-react";
+import { Coins, ArrowRight, Check, ArrowLeft } from "lucide-react";
 import { toast } from "sonner";
 
 interface QuizOption {
@@ -12,7 +13,11 @@ interface QuizOption {
   isCorrect: boolean;
 }
 
-const WhatIsMoneyLesson = () => {
+interface Props {
+  onBack?: () => void;
+}
+
+const WhatIsMoneyLesson = ({ onBack }: Props) => {
   const { t } = useLanguage();
   const [showQuiz, setShowQuiz] = useState(false);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
@@ -63,6 +68,17 @@ const WhatIsMoneyLesson = () => {
 
   return (
     <div className="max-w-4xl mx-auto p-4 pb-24">
+      <div className="mb-6">
+        <Button 
+          variant="outline" 
+          onClick={onBack}
+          className="mb-4"
+        >
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          {t("auth.back")}
+        </Button>
+      </div>
+
       {!showQuiz ? (
         <div className="space-y-6">
           <div className="flex items-center gap-3">

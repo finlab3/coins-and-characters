@@ -37,14 +37,19 @@ const LessonsScreen = () => {
     }
   };
 
+  const handleBackFromLesson = () => {
+    setShowLesson(false);
+    setSelectedPillar(null);
+  };
+
   const renderLesson = () => {
     switch (activeNode) {
       case 1:
-        return <WhatIsMoneyLesson />;
+        return <WhatIsMoneyLesson onBack={handleBackFromLesson} />;
       case 2:
-        return <WantsAndNeedsLesson />;
+        return <WantsAndNeedsLesson onBack={handleBackFromLesson} />;
       case 3:
-        return <SadaqaLesson />;
+        return <SadaqaLesson onBack={handleBackFromLesson} />;
       default:
         return null;
     }
